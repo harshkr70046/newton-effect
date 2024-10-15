@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62%;
+}
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: black;
+}
+.cradel{
+    width: 50rem;
+    height: 50rem;
+    border-top:1rem solid blue;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    display: flex;
+
+    justify-content: center;
+    gap: 4.55rem;
+    
+}
+
+div{
+    width: .5rem;
+    height: 20rem;
+    background-color:blue;
+    position:relative;
+    
+}
+.cradel div::before{
+    content: "";
+    position: absolute;
+    /* bottom: 0; */
+    top: 90%;
+    left: -2.25rem;
+    width: 5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: blue;
+}
+.cradel div:first-child{
+    
+    animation: left-swing 2s linear infinite;
+    transform-origin:top left;
+}
+@keyframes left-swing {
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: 30deg;
+    }
+    50%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+.cradel div:last-child{
+    
+    animation: right-swing 2s linear 1s infinite;
+    transform-origin:top right;
+}
+@keyframes right-swing {
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: -30deg;
+    }
+    50%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+
+@media (width<=550px) {
+    .cradel{
+        width: 28rem;
+        height: 30rem;
+        gap: 2.5rem;
+    }
+    div{
+        height:12rem;
+    }
+    .cradel div::before{
+        width: 3rem;
+        top: 90%;
+        left: -1.3rem;
+    }
+}
